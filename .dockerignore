@@ -1,0 +1,15 @@
+# Never send secrets to the Docker build context.
+.env
+.env.*
+!.env.example
+
+# Not needed inside the image.
+.git/
+.github/
+.venv/
+venv/
+tests/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/

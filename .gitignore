@@ -1,0 +1,25 @@
+# Secrets. .env.example is the only env file meant to be committed.
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+
+# Python build and cache files
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS files
+.DS_Store
+Thumbs.db

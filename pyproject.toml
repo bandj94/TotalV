@@ -1,0 +1,30 @@
+# Tool settings only. Dependencies are pinned in requirements.txt and
+# requirements-dev.txt, and the bot runs from source with `python -m totalv`.
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes: unused imports, undefined names
+    "I",     # import sorting
+    "B",     # bugbear: likely bugs
+    "UP",    # pyupgrade: modern syntax for the target Python
+    "SIM",   # simplifications
+    "ASYNC", # blocking calls inside async code
+    "RUF",   # ruff-specific checks
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Lets tests import the totalv package from the project root without installing it.
+pythonpath = ["."]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = [
+    # Raised inside discord.py's voice support, which TotalV never uses.
+    "ignore:'audioop' is deprecated:DeprecationWarning",
+]

@@ -1,0 +1,5 @@
+discord.py==2.7.1
+# Also installed by discord.py; pinned here because TotalV calls it directly.
+# Held at 3.13.x because aioresponses 0.7.9 (used by the tests) does not support 3.14 yet.
+aiohttp==3.13.5
+python-dotenv==1.2.4
